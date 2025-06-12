@@ -1,3 +1,7 @@
+# Modern/Futuristic Portfolio Template
+
+This portfolio is designed to showcase PowerBI projects with a modern, futuristic look. To add your own projects, replace the sample images/videos in `public/` and update the project cards in `src/app/page.tsx`.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

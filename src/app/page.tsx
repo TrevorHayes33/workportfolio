@@ -1,50 +1,68 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1 className={styles.title}>Trevor Hayes | Business Data Analyst</h1>
+          <p className={styles.subtitle}>
+            Welcome to my portfolio! I specialize in transforming data into actionable insights using PowerBI and modern analytics tools.
+          </p>
+        </section>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* Projects Section */}
+        <section className={styles.projects}>
+          <h2 className={styles.sectionTitle}>PowerBI Projects</h2>
+          <div className={styles.projectGrid}>
+            {/* Sample Project Card 1 */}
+            <div className={styles.projectCard}>
+              <Link href="/projects/site-scorecard" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Image
+                  src="/Scorecard%20Example%20(1).png"
+                  alt="Site Scorecard PowerBI Dashboard"
+                  width={400}
+                  height={225}
+                  className={styles.projectImage}
+                />
+                <div className={styles.projectContent}>
+                  <h3>Shipping Site Scorecard</h3>
+                  <p>
+                    An interactive dashboard visualizing KPIs, trends, and site performance. Built with PowerBI for near real-time business insights.
+                  </p>
+                </div>
+              </Link>
+            </div>
+            {/* Sample Project Card 2 (Video) */}
+            <div className={styles.projectCard}>
+              <video className={styles.projectImage} width="400" height="225" controls poster="/sample-powerbi-dashboard.png">
+                <source src="/sample-powerbi-demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className={styles.projectContent}>
+                <h3>Customer Segmentation Analysis</h3>
+                <p>
+                  A PowerBI report demonstrating customer segmentation and behavior analysis, featuring dynamic filtering and drill-downs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About/Contact Section */}
+        <section className={styles.about}>
+          <h2 className={styles.sectionTitle}>About Me</h2>
+          <p>
+            I am passionate about leveraging data to drive business decisions. With expertise in PowerBI, SQL, and data visualization, I help organizations unlock the full potential of their data.
+          </p>
+          <div className={styles.contactLinks}>
+            <a href="mailto:Hayes.Trevor33@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+            <a href="https://www.linkedin.com/in/trevorhayes3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </section>
       </main>
       <footer className={styles.footer}>
         <a
