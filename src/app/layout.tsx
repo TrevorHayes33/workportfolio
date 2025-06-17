@@ -1,6 +1,8 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ThemeWrapper from "./components/ThemeWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Trevor Hayes | Business Data Analyst Portfolio",
+  title: "Thayer | Business Data Analyst Portfolio",
   description: "A modern portfolio showcasing PowerBI projects and business data analytics work.",
 };
 
@@ -25,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <ThemeWrapper>
+          {children}
+        </ThemeWrapper>
       </body>
     </html>
   );

@@ -1,11 +1,25 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
+import ThemeSelector from "./components/ThemeSelector";
+import { useTheme } from "./contexts/ThemeContext";
 
 export default function Home() {
+  const { theme, setTheme } = useTheme();
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        {/* Theme Selector */}
+        <div className={styles.themeSelectorContainer}>
+          <ThemeSelector 
+            currentTheme={theme} 
+            onThemeChange={setTheme} 
+          />
+        </div>
+
         {/* Hero Section */}
         <section className={styles.hero}>
           <h1 className={styles.title}>Trevor Hayes | Business Data Analyst</h1>

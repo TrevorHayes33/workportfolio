@@ -1,0 +1,131 @@
+.themeSelector {
+  position: relative;
+  display: inline-block;
+  z-index: 1001;
+}
+
+.selectorButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+}
+
+.selectorButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.themeIcon {
+  font-size: 16px;
+}
+
+.themeName {
+  font-weight: 500;
+}
+
+.arrow {
+  font-size: 10px;
+  transition: transform 0.3s ease;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.themeOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  text-align: left;
+}
+
+.themeOption:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.themeOption.active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+/* Theme-specific styles */
+.themeSelector[data-theme="minimalistic"] .selectorButton {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.themeSelector[data-theme="minimalistic"] .selectorButton:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.themeSelector[data-theme="minimalistic"] .dropdown {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.themeSelector[data-theme="cyberpunk"] .selectorButton {
+  background: rgba(255, 0, 128, 0.2);
+  border-color: #ff0080;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.themeSelector[data-theme="cyberpunk"] .selectorButton:hover {
+  background: rgba(255, 0, 128, 0.3);
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.5);
+}
+
+.themeSelector[data-theme="cyberpunk"] .dropdown {
+  background: rgba(26, 0, 51, 0.95);
+  border-color: #ff0080;
+  color: #00ffff;
+}
+
+.themeSelector[data-theme="professional"] .selectorButton {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.themeSelector[data-theme="professional"] .selectorButton:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.themeSelector[data-theme="professional"] .dropdown {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: #3b82f6;
+  color: #f8fafc;
+} 

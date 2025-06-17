@@ -1,16 +1,16 @@
-.page {
-  min-height: 100vh;
-  background: #1A2238;
-  color: #222B45;
-  font-family: var(--font-geist-sans);
-  padding: 0;
+.themeSelectorContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    background: #161B2B;
-    color: #F5F6FA;
-  }
+/* Base styles */
+.page {
+  min-height: 100vh;
+  font-family: var(--font-geist-sans);
+  padding: 0;
+  transition: all 0.3s ease;
 }
 
 .main {
@@ -20,6 +20,7 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 48px 16px 64px 16px;
+  position: relative;
 }
 
 .hero {
@@ -31,18 +32,14 @@
   font-size: 2.8rem;
   font-weight: 800;
   letter-spacing: 0.04em;
-  color: #3A7CA5;
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
-  filter: none;
+  transition: all 0.3s ease;
 }
 
 .subtitle {
   font-size: 1.3rem;
-  color: #6b6b3d;
   margin-top: 12px;
   font-weight: 400;
+  transition: all 0.3s ease;
 }
 
 .sectionTitle {
@@ -50,8 +47,7 @@
   font-weight: 700;
   margin-bottom: 24px;
   letter-spacing: 0.03em;
-  color: #3A7CA5;
-  text-shadow: none;
+  transition: all 0.3s ease;
 }
 
 .projects {
@@ -71,61 +67,51 @@
 }
 
 .projectCard {
-  background: #F5F6FA;
   border-radius: 14px;
-  box-shadow: 0 2px 12px 0 #3A7CA522;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  border: 1px solid #3A7CA5;
-}
-
-.projectCard:hover, .projectCard a:hover {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 4px 24px 0 #3A7CA544;
-  cursor: pointer;
+  position: relative;
 }
 
 .projectImage {
   width: 100%;
   height: 225px;
   object-fit: cover;
-  background: #E1E6F9;
-  border-bottom: 1px solid #3A7CA5;
+  transition: all 0.3s ease;
 }
 
 .projectContent {
   padding: 20px 18px 18px 18px;
+  transition: all 0.3s ease;
 }
 
 .projectContent h3 {
   margin: 0 0 10px 0;
   font-size: 1.25rem;
-  color: #FF6A3D;
   font-weight: 700;
+  transition: all 0.3s ease;
 }
 
 .projectContent p {
-  color: #222B45;
   font-size: 1rem;
   margin: 0;
+  transition: all 0.3s ease;
 }
 
 .about {
-  background: #F5F6FA;
   border-radius: 12px;
   padding: 32px 24px;
-  box-shadow: 0 1px 8px 0 #3A7CA522;
   text-align: center;
-  border: 1px solid #3A7CA5;
+  transition: all 0.3s ease;
 }
 
 .about p {
-  color: #222B45;
   font-size: 1.1rem;
   margin-bottom: 18px;
+  transition: all 0.3s ease;
 }
 
 .contactLinks {
@@ -135,148 +121,12 @@
 }
 
 .contactLinks a {
-  color: #FF6A3D;
   font-weight: 600;
   font-size: 1.1rem;
-  text-shadow: none;
-  transition: color 0.2s;
-}
-
-.contactLinks a:hover {
-  color: #3A7CA5;
-}
-
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 6px;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
-}
-
-.footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
-}
-
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer img {
-  flex-shrink: 0;
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
 }
 
 .projectCard a {
@@ -285,4 +135,324 @@ a.secondary {
 
 .projectCard a:hover {
   cursor: pointer;
+}
+
+/* Minimalistic Theme */
+body.theme-minimalistic {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --accent: #007bff;
+  --border: #dee2e6;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.theme-minimalistic .page {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body.theme-minimalistic .title {
+  color: var(--text-primary);
+}
+
+body.theme-minimalistic .subtitle {
+  color: var(--text-secondary);
+}
+
+body.theme-minimalistic .sectionTitle {
+  color: var(--text-primary);
+}
+
+body.theme-minimalistic .projectCard {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+body.theme-minimalistic .projectCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+body.theme-minimalistic .projectImage {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+body.theme-minimalistic .projectContent h3 {
+  color: var(--text-primary);
+}
+
+body.theme-minimalistic .projectContent p {
+  color: var(--text-secondary);
+}
+
+body.theme-minimalistic .about {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+body.theme-minimalistic .about p {
+  color: var(--text-secondary);
+}
+
+body.theme-minimalistic .contactLinks a {
+  color: var(--accent);
+}
+
+body.theme-minimalistic .contactLinks a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Cyberpunk Theme */
+body.theme-cyberpunk {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a0033;
+  --text-primary: #00ffff;
+  --text-secondary: #ff0080;
+  --accent: #ff0080;
+  --border: #00ffff;
+  --shadow: rgba(255, 0, 128, 0.3);
+}
+
+body.theme-cyberpunk .page {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 50%, #0a0a0a 100%);
+  color: var(--text-primary);
+}
+
+body.theme-cyberpunk .title {
+  color: var(--text-secondary);
+  text-shadow: 0 0 20px var(--text-secondary), 0 0 40px var(--text-secondary);
+  background: linear-gradient(45deg, #ff0080, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.theme-cyberpunk .subtitle {
+  color: var(--text-primary);
+  text-shadow: 0 0 10px var(--text-primary);
+}
+
+body.theme-cyberpunk .sectionTitle {
+  color: var(--text-secondary);
+  text-shadow: 0 0 15px var(--text-secondary);
+}
+
+body.theme-cyberpunk .projectCard {
+  background: linear-gradient(145deg, #1a0033, #2a0044);
+  box-shadow: 0 4px 20px 0 rgba(255, 0, 128, 0.3), 0 0 30px rgba(0, 255, 255, 0.2);
+  border: 2px solid transparent;
+}
+
+body.theme-cyberpunk .projectCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 14px;
+  padding: 2px;
+  background: linear-gradient(45deg, #ff0080, #00ffff, #ff0080);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+body.theme-cyberpunk .projectCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 40px 0 rgba(255, 0, 128, 0.5), 0 0 50px rgba(0, 255, 255, 0.4);
+}
+
+body.theme-cyberpunk .projectImage {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--text-secondary);
+}
+
+body.theme-cyberpunk .projectContent h3 {
+  color: var(--text-secondary);
+  text-shadow: 0 0 10px var(--text-secondary);
+}
+
+body.theme-cyberpunk .projectContent p {
+  color: var(--text-primary);
+  text-shadow: 0 0 5px var(--text-primary);
+}
+
+body.theme-cyberpunk .about {
+  background: linear-gradient(145deg, #1a0033, #2a0044);
+  box-shadow: 0 4px 20px 0 rgba(0, 255, 255, 0.3);
+  border: 2px solid var(--text-primary);
+}
+
+body.theme-cyberpunk .about p {
+  color: var(--text-primary);
+  text-shadow: 0 0 5px var(--text-primary);
+}
+
+body.theme-cyberpunk .contactLinks a {
+  color: var(--text-secondary);
+  text-shadow: 0 0 10px var(--text-secondary);
+}
+
+body.theme-cyberpunk .contactLinks a:hover {
+  color: var(--text-primary);
+  text-shadow: 0 0 15px var(--text-primary);
+  background: rgba(0, 255, 255, 0.1);
+  border-color: var(--text-primary);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* Professional Theme */
+body.theme-professional {
+  --bg-primary: #1e293b;
+  --bg-secondary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --accent: #3b82f6;
+  --border: #475569;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+body.theme-professional .page {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: var(--text-primary);
+}
+
+body.theme-professional .title {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+body.theme-professional .subtitle {
+  color: var(--text-secondary);
+}
+
+body.theme-professional .sectionTitle {
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+body.theme-professional .projectCard {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+body.theme-professional .projectCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 32px var(--shadow);
+  border-color: var(--accent);
+}
+
+body.theme-professional .projectImage {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+body.theme-professional .projectContent h3 {
+  color: var(--accent);
+}
+
+body.theme-professional .projectContent p {
+  color: var(--text-secondary);
+}
+
+body.theme-professional .about {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+body.theme-professional .about p {
+  color: var(--text-secondary);
+}
+
+body.theme-professional .contactLinks a {
+  color: var(--accent);
+}
+
+body.theme-professional .contactLinks a:hover {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Theme-specific list styles for project detail pages */
+body.theme-minimalistic ul {
+  color: var(--text-secondary);
+}
+
+body.theme-cyberpunk ul {
+  color: var(--text-primary);
+  text-shadow: 0 0 5px var(--text-primary);
+}
+
+body.theme-professional ul {
+  color: var(--text-secondary);
+}
+
+/* Ensure all text elements inherit theme colors */
+body.theme-minimalistic p {
+  color: var(--text-secondary);
+}
+
+body.theme-cyberpunk p {
+  color: var(--text-primary);
+  text-shadow: 0 0 5px var(--text-primary);
+}
+
+body.theme-professional p {
+  color: var(--text-secondary);
+}
+
+body.theme-minimalistic strong {
+  color: var(--text-primary);
+}
+
+body.theme-cyberpunk strong {
+  color: var(--text-secondary);
+  text-shadow: 0 0 5px var(--text-secondary);
+}
+
+body.theme-professional strong {
+  color: var(--accent);
+}
+
+.main-content {
+  background: inherit;
+  color: inherit;
+  min-height: 100vh;
+  margin-left: 250px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+.theme-minimalistic .main-content,
+.theme-minimalistic .page {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.theme-cyberpunk .main-content,
+.theme-cyberpunk .page {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 50%, #0a0a0a 100%);
+  color: var(--text-primary);
+}
+
+.theme-professional .main-content,
+.theme-professional .page {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: var(--text-primary);
 }

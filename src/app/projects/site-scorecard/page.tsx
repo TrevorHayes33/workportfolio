@@ -1,7 +1,12 @@
+'use client';
+
 import Image from "next/image";
 import styles from "../../page.module.css";
+import { useTheme } from "../../contexts/ThemeContext";
 
 export default function SiteScorecard() {
+  const { theme } = useTheme();
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -24,7 +29,7 @@ export default function SiteScorecard() {
             <p>
               The Shipping Site Scorecard is an interactive dashboard designed to provide real-time visibility into key performance indicators (KPIs) for shipping operations. It enables users to:
             </p>
-            <ul style={{ margin: '24px 0', paddingLeft: '24px', color: '#222B45', fontSize: '1.1rem' }}>
+            <ul style={{ margin: '24px 0', paddingLeft: '24px', fontSize: '1.1rem' }}>
               <li>Monitor on-time delivery and pickup rates</li>
               <li>Track premium freight spend and cost deviations</li>
               <li>Analyze carrier choice and service level compliance</li>
@@ -32,7 +37,7 @@ export default function SiteScorecard() {
               <li>Identify trends and areas for operational improvement</li>
             </ul>
             <h2 className={styles.sectionTitle}>Key Features</h2>
-            <ul style={{ margin: '24px 0', paddingLeft: '24px', color: '#222B45', fontSize: '1.1rem' }}>
+            <ul style={{ margin: '24px 0', paddingLeft: '24px', fontSize: '1.1rem' }}>
               <li>Dynamic filtering by city, SBU, and date</li>
               <li>Visual KPIs with color-coded gauges and charts</li>
               <li>Clear breakdown of costs and compliance metrics</li>
