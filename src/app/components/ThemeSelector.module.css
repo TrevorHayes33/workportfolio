@@ -91,9 +91,9 @@
 }
 
 .themeSelector[data-theme="minimalistic"] .dropdown {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(131, 131, 131, 0.95);
   border-color: rgba(0, 0, 0, 0.1);
-  color: #333;
+  color: #ff0000;
 }
 
 .themeSelector[data-theme="cyberpunk"] .selectorButton {
@@ -128,4 +128,33 @@
   background: rgba(30, 41, 59, 0.95);
   border-color: #3b82f6;
   color: #f8fafc;
+}
+
+.theme-minimalistic .selectorButton {
+  background: #203e7a !important;
+  border: 1px solid #d1d5db !important;
+  color: #374151 !important;
+  box-shadow: none !important;
+}
+.theme-minimalistic .selectorButton:hover {
+  background: #060661 !important;
+  border-color: #007bff !important;
+  color: #007bff !important;
+}
+.theme-minimalistic .dropdown {
+  background: #fff !important;
+  border: 1px solid #d1d5db !important;
+  color: #374151 !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
+}
+.theme-minimalistic .themeOption {
+  color: #374151 !important;
+}
+.theme-minimalistic .themeOption.active {
+  background: #e5e7eb !important;
+  color: #007bff !important;
+}
+.theme-minimalistic .themeOption:hover {
+  background: #f4f4f5 !important;
+  color: #007bff !important;
 } 
